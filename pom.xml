@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>consoleApp</artifactId>
-    <groupId>codeforces.com.tasks</groupId>
+    <groupId>com.githab.elvirka.tasks</groupId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -92,7 +92,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <release>13</release>
+                    <release>14</release>
                 </configuration>
             </plugin>
             <plugin>
