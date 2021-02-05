@@ -1,33 +1,24 @@
 package com.github.elvirka.tasks
 
-import java.util.Scanner
-import java.util.UUID
-import kotlin.math.max
+import reactor.core.publisher.Flux
+import reactor.core.publisher.FluxSink
+import reactor.core.scheduler.Schedulers
+import java.lang.IllegalArgumentException
 
-fun hourglassSum(arr: Array<Array<Int>>): Int {
-    var max = Int.MIN_VALUE
-    for (i in 1 until arr.lastIndex){
-        for (j in 1 until arr.lastIndex){
-            val sum = arr[i][j] + arr[i-1][j-1] + arr[i-1][j] + arr[i-1][j+1] +
-                    arr[i+1][j-1] + arr[i+1][j] + arr[i+1][j+1]
-            max = max(max, sum)
-        }
+
+fun main() {
+    val source = Flux.create { emitter: FluxSink<Int?> ->
+        println(Thread.currentThread())
+        emitter.next(1)
+        emitter.next(2)
+        emitter.complete()
     }
-    return max
+    source
+        .map { if (it == 2) throw IllegalArgumentException() }
+        .map { i -> "$i. element: $i".also { println(Thread.currentThread()) } }
+        .onErrorResume { throw it }
+        .subscribe(::println)
+
+    println("Before or after?")
 }
 
-fun main(args: Array<String>) {
-    println(UUID.randomUUID())
-
-    val scan = Scanner(System.`in`)
-
-    val arr = Array<Array<Int>>(6) { Array<Int>(6) { 0 } }
-
-    for (i in 0 until 6) {
-        arr[i] = scan.nextLine().split(" ").map{ it.trim().toInt() }.toTypedArray()
-    }
-
-    val result = hourglassSum(arr)
-
-    println(result)
-}

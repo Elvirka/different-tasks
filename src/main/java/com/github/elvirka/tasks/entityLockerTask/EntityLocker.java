@@ -7,11 +7,13 @@ import java.util.concurrent.locks.ReentrantLock;
 public class EntityLocker<T> {
     private final Map<T, ReentrantLock> lockers = new HashMap<>();
 
-    synchronized void getLock(T id){
+    void getLock(T id){
         ReentrantLock locker = lockers.get(id);
-        if (locker == null) {
-            locker = new ReentrantLock();
-            lockers.put(id, locker);
+        synchronized (this) {
+            if (locker == null) {
+                locker = new ReentrantLock();
+                lockers.put(id, locker);
+            }
         }
         locker.lock();
     }

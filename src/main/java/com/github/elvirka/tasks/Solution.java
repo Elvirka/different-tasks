@@ -1,19 +1,20 @@
 package com.github.elvirka.tasks;
 
+import java.io.*;
 import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.lang.reflect.*;
 
-class MyRegex {
-    String pattern = "(25[0-5]|2[0-4]\\d|[0-1]?\\d{1,2})\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d{1,2})\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d{1,2})\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d{1,2})";
-}
 
-class Solution{
+class Singleton {
+    public String str;
 
-    public static void main(String[] args){
-        Scanner in = new Scanner(System.in);
-        while(in.hasNext()){
-            String IP = in.next();
-            System.out.println(IP.matches(new MyRegex().pattern));
-        }
+    private Singleton(){}
 
+    public static Singleton getSingleInstance(){
+        return new Singleton();
     }
+
 }

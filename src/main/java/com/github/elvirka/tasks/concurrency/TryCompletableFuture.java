@@ -10,7 +10,7 @@ public class TryCompletableFuture {
 
     public static void main(String[] args) {
         testRun();
-        testAccept();
+        //testAccept();
     }
 
     private static void testRun() {

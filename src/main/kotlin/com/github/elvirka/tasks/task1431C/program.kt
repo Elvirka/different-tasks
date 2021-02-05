@@ -3,7 +3,7 @@ package com.github.elvirka.tasks.task1431C
 fun main() {
     val t = readLine()!!.toInt()
     (1..t).map {
-        val (n, k) = readLine()!!.split(" ").map(String::toInt)
+        val (_, k) = readLine()!!.split(" ").map(String::toInt)
         val p = readLine()!!.split(" ").map(String::toInt).reversed()
         var max = 0
         var pos = mutableListOf<Int>()

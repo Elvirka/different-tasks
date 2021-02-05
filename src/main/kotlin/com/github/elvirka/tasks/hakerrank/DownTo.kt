@@ -10,7 +10,7 @@ fun miniMaxSum(arr: Array<Int>): Unit {
     }
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val scan = Scanner(System.`in`)
 
     val arr = scan.nextLine().split(" ").map{ it.trim().toInt() }.toTypedArray()
