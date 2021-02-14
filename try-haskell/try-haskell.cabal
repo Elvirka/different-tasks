@@ -37,7 +37,7 @@ library
   default-language: Haskell2010
 
 executable try-haskell-exe
-  codeforces.com.tasks.hakerrank.codeforces.com.tasks.main-is: Main.hs
+  codeforces.com.tasks.hakerrank.codeforces.com.tasks.com.github.elvirka.tasks.codeforces.archive.main-is: Main.hs
   other-modules:
       Paths_try_haskell
   hs-source-dirs:
@@ -50,7 +50,7 @@ executable try-haskell-exe
 
 test-suite try-haskell-test
   type: exitcode-stdio-1.0
-  codeforces.com.tasks.hakerrank.codeforces.com.tasks.main-is: Spec.hs
+  codeforces.com.tasks.hakerrank.codeforces.com.tasks.com.github.elvirka.tasks.codeforces.archive.main-is: Spec.hs
   other-modules:
       Paths_try_haskell
   hs-source-dirs:

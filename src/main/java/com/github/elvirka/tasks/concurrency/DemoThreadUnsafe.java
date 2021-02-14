@@ -12,14 +12,14 @@ class DemoThreadUnsafe {
         Thread thread1 = new Thread( () -> {
             for (int i = 0; i < 100; i++) {
                 badCounter.increment();
-                DemoThreadUnsafe.sleepRandomlyForLessThan10Secs();
+                sleepRandomlyForLessThan10Secs();
             }
         });
 
         Thread thread2 = new Thread( () -> {
             for (int i = 0; i < 100; i++) {
                 badCounter.decrement();
-                DemoThreadUnsafe.sleepRandomlyForLessThan10Secs();
+                sleepRandomlyForLessThan10Secs();
             }
         });
 

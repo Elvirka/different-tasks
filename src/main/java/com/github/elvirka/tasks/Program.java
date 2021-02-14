@@ -1,19 +1,28 @@
 package com.github.elvirka.tasks;
 
+import java.util.ArrayList;
 
-public class Program extends Thread {
-    @Override
-    public void run() {
-        System.out.println("run");
-        throw new RuntimeException();
+public class Program {
+    static Object lock = new Object();
+    static int counter = 0;
+
+    public static void main(String[] args) throws InterruptedException {
+        runThread();
     }
 
-    public static void main(String[] args) {
-        try {
-            new Program().start();
-            System.out.println("main");
-        } catch (RuntimeException e) {
-            System.out.println("catch");
+    static public void runThread() {
+        var list = new ArrayList<Thread>();
+
+        for (int i = 0; i < 5; i++) {
+            Thread t1 = new Thread(() -> {
+                synchronized (lock) {
+                    for (int j = 0; j < 1000000; j++) {
+                        counter++;
+                    }
+                }
+            });
+            list.add(t1);
         }
+        list.forEach(Thread::start);
     }
 }

@@ -1,5 +1,5 @@
-package main
+package com.github.elvirka.tasks.codeforces.archive.main
 
-func main() {
+func com.github.elvirka.tasks.codeforces.archive.main() {
 
 }

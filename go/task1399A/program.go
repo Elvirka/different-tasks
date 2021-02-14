@@ -1,4 +1,4 @@
-package main
+package com.github.elvirka.tasks.codeforces.archive.main
 
 import (
 	"bufio"
@@ -7,7 +7,7 @@ import (
 	"sort"
 )
 
-func main() {
+func com.github.elvirka.tasks.codeforces.archive.main() {
 	var tn int
 	in := bufio.NewReader(os.Stdin)
 	fmt.Fscan(in, &tn)

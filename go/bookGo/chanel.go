@@ -1,4 +1,4 @@
-package main
+package com.github.elvirka.tasks.codeforces.archive.main
 
 import (
 	"fmt"
@@ -12,7 +12,7 @@ func printCount(c chan int)  {
 	}
 }
 
-func main() {
+func com.github.elvirka.tasks.codeforces.archive.main() {
 	c := make(chan int)
 	a := []int {1, 2, 5, 8, -4, 13, 21, -6}
 	go printCount(c)
@@ -20,5 +20,5 @@ func main() {
 		c <- v
 	}
 	//time.Sleep(time.Millisecond * 1)
-	fmt.Println("End of main")
+	fmt.Println("End of com.github.elvirka.tasks.codeforces.archive.main")
 }
