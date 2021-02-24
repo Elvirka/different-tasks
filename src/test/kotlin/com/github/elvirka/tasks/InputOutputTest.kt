@@ -1,8 +1,8 @@
 package com.github.elvirka.tasks
 
 import com.github.elvirka.tasks.codeforces.archive.task231A
-import org.junit.Assert
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 import java.io.ByteArrayOutputStream
 import java.io.PrintStream
 
@@ -29,7 +29,7 @@ class InputOutputTest {
 
         task231A()
 
-        Assert.assertEquals(expected, baos.toString().trim())
+        assertEquals(expected, baos.toString().trim())
     }
 
 }

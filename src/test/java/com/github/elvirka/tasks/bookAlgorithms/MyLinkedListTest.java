@@ -1,9 +1,8 @@
 package com.github.elvirka.tasks.bookAlgorithms;
 
+import org.junit.jupiter.api.BeforeEach;
+
 import java.util.ArrayList;
-
-import org.junit.Before;
-
 
 /**
  * @auth or downey
@@ -12,16 +11,16 @@ import org.junit.Before;
 public class MyLinkedListTest extends MyArrayListTest {
 
     /**
-     * @throws java.lang.Exception
+     * @throws Exception
      */
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         list = new ArrayList<Integer>();
         list.add(1);
         list.add(2);
         list.add(3);
 
-        mylist = new MyLinkedList<Integer>();
-        mylist.addAll(list);
+        myList = new MyLinkedList<Integer>();
+        myList.addAll(list);
     }
 }
