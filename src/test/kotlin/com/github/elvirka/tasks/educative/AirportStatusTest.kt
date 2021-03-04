@@ -1,7 +1,7 @@
 package com.github.elvirka.tasks.educative
 
-import com.github.elvirka.tasks.educative.tryTests.Airport
-import com.github.elvirka.tasks.educative.tryTests.getAirportStatus
+import com.github.elvirka.tasks.educative.kotlinCourse.tryTests.Airport
+import com.github.elvirka.tasks.educative.kotlinCourse.tryTests.getAirportStatus
 import io.kotlintest.TestCase
 import io.kotlintest.TestResult
 import io.kotlintest.data.forall

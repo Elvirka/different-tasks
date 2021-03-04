@@ -13,8 +13,7 @@ import io.netty.buffer.Unpooled
 class EchoServerHandler: ChannelInboundHandlerAdapter() {
 
     override fun channelRead(ctx: ChannelHandlerContext, msg: Any) {
-        val msg = msg as ByteBuf
-        println("Server received: " + msg.toString(CharsetUtil.UTF_8))
+        println("Server received: " + (msg as ByteBuf).toString(CharsetUtil.UTF_8))
         ctx.write(msg)
     }
 
