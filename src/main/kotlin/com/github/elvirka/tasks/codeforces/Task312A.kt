@@ -2,13 +2,12 @@ package com.github.elvirka.tasks.codeforces
 
 import java.util.Scanner
 
-val scanner = Scanner(System.`in`)
-
 fun main() {
     task312A()
 }
 
 fun task312A() {
+    val scanner = Scanner(System.`in`)
     val n = scanner.nextInt()
     scanner.nextLine()
     for (i in 1..n){

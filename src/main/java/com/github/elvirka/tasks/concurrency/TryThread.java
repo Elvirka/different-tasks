@@ -5,12 +5,12 @@ import java.util.List;
 
 public class TryThread {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         var list = new Container();
         Runnable foo = () -> {
-            for (int i = 0; i < 100000; i++) {
+            for (int i = 0; i < 1000; i++) {
                 list.addEntry("foo");
-                System.out.println("Thread " + Thread.currentThread().getName());
+                //System.out.println("Thread " + Thread.currentThread().getName());
             }
         };
         var threads = new ArrayList<Thread>();
@@ -19,9 +19,10 @@ public class TryThread {
             thread.start();
             threads.add(thread);
         }
+        Thread.sleep(1000);
         System.out.println(list.size());
-        while (list.size() < 1000000){}
-        System.out.println("Finished!");
+        while (list.size() < 1000){}
+        System.out.println("Finished!".hashCode());
     }
 }
 

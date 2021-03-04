@@ -21,8 +21,8 @@ class TrySemaphore {
                     } catch (Exception e) {
                         return;
                     } finally {
-                        System.out.println("Bad thread releasing semaphore.");
-                        semaphore.release();
+                        //System.out.println("Bad thread releasing semaphore.");
+                        //semaphore.release();
                     }
                 } catch (InterruptedException ie) {
                     // handle thread interruption

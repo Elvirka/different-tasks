@@ -34,10 +34,9 @@ class MissedSignal {
             lock.unlock();
         });
 
-        waiter.start();
         signaller.start();
-
         signaller.join();
+        waiter.start();
         waiter.join();
 
         System.out.println("Program Exiting.");

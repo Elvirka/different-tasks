@@ -1,11 +1,12 @@
 package com.github.elvirka.tasks.educative
 
 import java.math.BigInteger
+import kotlin.system.measureNanoTime
 import kotlin.system.measureTimeMillis
 
 fun main() {
     //println(factorialIterative(50000))
-    println(factorial(5))
+    //println(factorial(5))
     //println(factorialRec(50000))
 
     lateinit var fib: (Int) -> Long
@@ -16,8 +17,8 @@ fun main() {
             else -> fib(n - 1) + fib(n - 2)
         }
     }.memoize()
-    println(measureTimeMillis { fib(40) })
-    println(measureTimeMillis { fib(45) })
+    println(measureNanoTime { fib(40) })
+    println(measureNanoTime { fib(45) })
 }
 
 fun fib(n: Int) : Long = when (n) {

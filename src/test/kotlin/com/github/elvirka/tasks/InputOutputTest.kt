@@ -1,35 +1,35 @@
 package com.github.elvirka.tasks
 
-import com.github.elvirka.tasks.codeforces.archive.task231A
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Test
+import com.github.elvirka.tasks.codeforces.task1489A
+import io.kotlintest.shouldBe
+import io.kotlintest.specs.StringSpec
 import java.io.ByteArrayOutputStream
 import java.io.PrintStream
 
-class InputOutputTest {
+class InputOutputTest : StringSpec() {
 
-    @Test
-    fun test() {
-        val input = """
-            3
-            1 1 0
-            1 1 1
-            1 0 0
+    init {
+        "codeforces test" {
+            val input = """
+            5
+            2 4 2 4 4
         """.trimIndent()
 
-        val expected = """
+            val expected = """
             2
+            2 4
         """.trimIndent()
 
-        // set stdin
-        System.setIn(input.byteInputStream())
-        // set stdout
-        val baos = ByteArrayOutputStream()
-        System.setOut(PrintStream(baos))
+            // set stdin
+            System.setIn(input.byteInputStream())
+            // set stdout
+            val baos = ByteArrayOutputStream()
+            System.setOut(PrintStream(baos))
 
-        task231A()
+            task1489A()
 
-        assertEquals(expected, baos.toString().trim())
+            baos.toString().trim() shouldBe expected
+
+        }
     }
-
 }

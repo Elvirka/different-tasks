@@ -12,12 +12,13 @@ public class TryReentrantLock {
     private static final ExecutorService executor = Executors.newFixedThreadPool(5);
 
     public static void main(String[] args) throws InterruptedException {
-        var qwe = new SharedObject();
-        executor.execute(qwe::perform);
-        executor.execute(qwe::perform);
-        executor.execute(qwe::perform);
-        executor.awaitTermination(5, TimeUnit.SECONDS);
-        System.out.println(qwe.counter);
+        var sharedObject = new SharedObject();
+        executor.execute(sharedObject::perform);
+        executor.execute(sharedObject::perform);
+        executor.execute(sharedObject::perform);
+        var res = executor.awaitTermination(5, TimeUnit.SECONDS);
+
+        System.out.println(sharedObject.counter);
     }
 
     public static class SharedObject {
