@@ -1,5 +1,8 @@
 package com.github.elvirka.tasks.educative;
 
+import com.github.elvirka.tasks.educative.kotlinCourse.Counter;
+import com.github.elvirka.tasks.educative.kotlinCourse.CounterTop;
+
 public class UseCounter {
     public static void main(String[] args) {
         Counter counter = Counter.create();
